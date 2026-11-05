@@ -1,0 +1,35 @@
+spring:
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+  jackson:
+    time-zone: UTC
+
+springdoc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    enabled: false
+
+app:
+  ingest:
+    token: test-ingest-token
+  telegram:
+    enabled: false
+    bot-token: ""
+    chat-id: ""
+    webhook-secret: ""
+    notify-on-ingest: false
+  cors:
+    allowed-origins:
+      - http://localhost:4200
